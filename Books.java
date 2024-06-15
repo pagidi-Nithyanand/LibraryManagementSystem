@@ -2,11 +2,55 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
 import javax.swing.*;
-
+import javax.swing.plaf.FontUIResource;
+import java.awt.Font;
+import java.io.File;
+import java.util.Enumeration;
 import Users.Admin;
 
 public class Books {
+  private static void setTheme() {
+    // Look and Feel
+    if (System.getProperty("os.name").toString().equals("Linux")) {
+      try {
+        UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
+      } catch (Exception e1) {
+        try {
+          UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        } catch (Exception e2) {
+          try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+          } catch (Exception e) {
+          }
+        }
+      }
+    } else {
+      try {
+        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+      } catch (Exception e) {
+      }
+    }
+    // // Font
+    // FontUIResource custom_font;
+    // try {
+    // File font_file = new File("./Fonts/Lato/Lato-Regular.ttf");
+    // Font font = Font.createFont(Font.TRUETYPE_FONT, font_file);
+    // custom_font = new FontUIResource(font.deriveFont(16f));
+    // } catch (Exception e) {
+    // custom_font = new FontUIResource("Helvetica", Font.PLAIN, 16);
+    // }
+
+    // Enumeration<Object> keys = UIManager.getDefaults().keys();
+    // while (keys.hasMoreElements()) {
+    // Object key = keys.nextElement();
+    // Object value = UIManager.get(key);
+    // if (value instanceof FontUIResource)
+    // UIManager.put(key, custom_font);
+    // }
+  }
+
   public static void main(String[] args) {
+    setTheme();
     gui();
   }
 
@@ -35,13 +79,12 @@ public class Books {
           Statement indata = con.createStatement();
           String sql1 = "select * from Admins";
           ResultSet rs = indata.executeQuery(sql1);
-          while(rs.next()){
-            if (rs.getNString(1).equalsIgnoreCase(F_user.getText()) &&rs.getNString(2).equals(F_pass.getText()) ){
-              Admin a=new Admin();
+          while (rs.next()) {
+            if (rs.getNString(1).equalsIgnoreCase(F_user.getText()) && rs.getNString(2).equals(F_pass.getText())) {
+              Admin a = new Admin();
               a.Admin_functions();
-            }
-            else{
-              //JOptionPane.showInputDialog(login_b,"f","","");
+            } else {
+              // JOptionPane.showInputDialog(login_b,"f","","");
             }
           }
         } catch (SQLException e1) {
@@ -50,7 +93,7 @@ public class Books {
         } catch (ClassNotFoundException e12) {
           // TODO Auto-generated catch block
           e12.printStackTrace();
-        } 
+        }
       }
     };
     login_b.addActionListener(a1);
