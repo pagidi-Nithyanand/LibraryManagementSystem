@@ -129,4 +129,8 @@ public class View {
     View_books.setSize(600, 400);
     View_books.setLocationRelativeTo(null);
   }
+public void View_books() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'View_books'");
+}
 }

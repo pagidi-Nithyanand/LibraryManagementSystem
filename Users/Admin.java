@@ -28,29 +28,26 @@ public class Admin {
     Admin.setLayout(new FlowLayout(FlowLayout.CENTER));
     Admin.setSize(600, 400);
     Admin.setVisible(true);
-     JButton add_b = new JButton("Add Book");  creating instance of JButton for
-     adding books
-     add_b.setBounds(150, 60, 120, 25);
-     ActionListener a1 = new ActionListener() {
-     public void actionPerformed(ActionEvent e) {
-      Admin.setVisible(fal
-     insert i = new insert();
-     i.bookdata();
-     }
-     };
-     add_b.addActionListener(a1);
-     JButton view_b = new JButton("View Books"); creating instance of JButton to
-     view books
-     view_b.setBounds(20, 20, 120, 25);
-     ActionListener a2 = new ActionListener() {
-     public void actionPerformed(ActionEvent e) {
-     View v = new View();
-     v.View_books();
+    JButton add_b = new JButton("Add Book");  //creating instance of JButton for adding books
+    add_b.setBounds(150, 60, 120, 25);
+    ActionListener a1 = new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        Admin.setVisible(false);
+        insert i = new insert();
+        i.bookdata();
+      }
+    };
+    add_b.addActionListener(a1);
+    JButton view_b = new JButton("View Books"); //creating instance of JButton to view books
+    view_b.setBounds(20, 20, 120, 25);
+    ActionListener a2 = new ActionListener() {
+    public void actionPerformed(ActionEvent e) {
+    View v = new View();
+    v.View_books();
      }
      };
      view_b.addActionListener(a2);
-     JButton issue_b = new JButton("Issue Book");  creating instance of JButton
-     to issue books
+     JButton issue_b = new JButton("Issue Book");  //creating instance of JButton to issue books
      issue_b.setBounds(450, 20, 120, 25);
      ActionListener a3 = new ActionListener() {
      public void actionPerformed(ActionEvent e) {
@@ -59,8 +56,7 @@ public class Admin {
      }
      };
      issue_b.addActionListener(a3);
-     JButton issued_b = new JButton("View Issued Books"); creating instance of
-     JButton to view the issued books
+     JButton issued_b = new JButton("View Issued Books"); //creating instance of JButton to view the issued books
      issued_b.setBounds(280, 20, 160, 25);
      ActionListener a4 = new ActionListener() {
      public void actionPerformed(ActionEvent e) {
@@ -69,8 +65,7 @@ public class Admin {
      }
      };
      issued_b.addActionListener(a4);
-     JButton return_b = new JButton("Return Book");  creating instance of
-     JButton to return books
+     JButton return_b = new JButton("Return Book");  //creating instance of JButton to return books
      return_b.setBounds(280, 60, 160, 25);
      ActionListener a5 = new ActionListener() {
      public void actionPerformed(ActionEvent e) {
@@ -79,8 +74,7 @@ public class Admin {
      }
      };
      return_b.addActionListener(a5);
-     JButton add_user = new JButton("Add User");  creating instance of JButton
-     to add users
+     JButton add_user = new JButton("Add User");  //creating instance of JButton to add users
      add_user.setBounds(20, 60, 120, 25);
      ActionListener a6 = new ActionListener() {
      public void actionPerformed(ActionEvent e) {
@@ -89,11 +83,9 @@ public class Admin {
      }
      };
      add_user.addActionListener(a6);
-     JButton users_b = new JButton("View Readers"); creating instance of JButton
-     to view users
+     JButton users_b = new JButton("View Readers"); //creating instance of JButton to view users
      users_b.setBounds(150, 20, 120, 25);
-     JButton create_b = new JButton("Create/Reset"); creating instance of
-     JButton to create or reset database
+     JButton create_b = new JButton("Create/Reset"); //creating instance of JButton to create or reset database
      create_b.setBounds(450, 60, 120, 25);
      ActionListener a8 = new ActionListener() {
      public void actionPerformed(ActionEvent e) {
@@ -101,8 +93,7 @@ public class Admin {
      JButton createad = new JButton("Create new Admin");
      ActionListener a81 = new ActionListener() {
      public void actionPerformed(ActionEvent e) {
-     int res = JOptionPane.showOptionDialog(new JFrame(), "Do you want to Add new
-     Admin", "Confirm",
+     int res = JOptionPane.showOptionDialog(new JFrame(), "Do you want to Add new Admin", "Confirm",
      JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
      new Object[] { "Yes", "No" }, JOptionPane.YES_OPTION);
      if (res == JOptionPane.YES_OPTION) {
@@ -120,8 +111,7 @@ public class Admin {
      JButton resetuc = new JButton("Clear Login Credentials");
      ActionListener a82 = new ActionListener() {
      public void actionPerformed(ActionEvent e) {
-     int res = JOptionPane.showOptionDialog(new JFrame(), "Do you want to clear
-     login credentials", "Confirm",
+     int res = JOptionPane.showOptionDialog(new JFrame(), "Do you want to clear login credentials", "Confirm",
      JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
      new Object[] { "Yes", "No" }, JOptionPane.YES_OPTION);
      if (res == JOptionPane.YES_OPTION) {
@@ -137,8 +127,7 @@ public class Admin {
      JButton resetbd = new JButton("Clear Book Details");
      ActionListener a83 = new ActionListener() {
      public void actionPerformed(ActionEvent e) {
-     int res = JOptionPane.showOptionDialog(new JFrame(), "Do you want to clear
-     book details", "Confirm",
+     int res = JOptionPane.showOptionDialog(new JFrame(), "Do you want to clear book details", "Confirm",
      JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
      new Object[] { "Yes", "No" }, JOptionPane.YES_OPTION);
      if (res == JOptionPane.YES_OPTION) {
@@ -154,8 +143,7 @@ public class Admin {
      JButton resetibd = new JButton("Clear Issued Book\'s Details");
      ActionListener a84 = new ActionListener() {
      public void actionPerformed(ActionEvent e) {
-     int res = JOptionPane.showOptionDialog(new JFrame(), "Do you want to clear
-     Issued book details", "Confirm",
+     int res = JOptionPane.showOptionDialog(new JFrame(),"Do you want to clear Issued book details", "Confirm",
      JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
      new Object[] { "Yes", "No" }, JOptionPane.YES_OPTION);
      if (res == JOptionPane.YES_OPTION) {
@@ -192,9 +180,9 @@ public class Admin {
      Admin.add(users_b);
      Admin.add(view_b);
      Admin.add(add_user);
-     Admin.setSize(600, 200); 400 width and 500 height
-     Admin.setLayout(null); using no layout managers
-     Admin.setVisible(true); making the frame visible
+     Admin.setSize(600, 200); //400 width and 500 height
+     Admin.setLayout(null); //using no layout managers
+     Admin.setVisible(true); //making the frame visible
      Admin.setLocationRelativeTo(null);
     Admin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }
