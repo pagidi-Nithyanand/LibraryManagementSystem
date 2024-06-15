@@ -30,23 +30,6 @@ public class Books {
       } catch (Exception e) {
       }
     }
-    // // Font
-    // FontUIResource custom_font;
-    // try {
-    // File font_file = new File("./Fonts/Lato/Lato-Regular.ttf");
-    // Font font = Font.createFont(Font.TRUETYPE_FONT, font_file);
-    // custom_font = new FontUIResource(font.deriveFont(16f));
-    // } catch (Exception e) {
-    // custom_font = new FontUIResource("Helvetica", Font.PLAIN, 16);
-    // }
-
-    // Enumeration<Object> keys = UIManager.getDefaults().keys();
-    // while (keys.hasMoreElements()) {
-    // Object key = keys.nextElement();
-    // Object value = UIManager.get(key);
-    // if (value instanceof FontUIResource)
-    // UIManager.put(key, custom_font);
-    // }
   }
 
   public static void main(String[] args) {
